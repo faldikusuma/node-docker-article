@@ -1,2 +1,3 @@
-# Exersice2
-Javascript calculator
+# Make article
+
+learn how to make article using node and docker compose

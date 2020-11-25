@@ -1,0 +1,36 @@
+extend layout
+
+block content
+  .row
+    .col-lg-8
+      h1.mt-4= article.title
+      p.lead
+        | by
+        a(href='#')
+        | #{author}   
+      hr
+      p=article.created_at.toDateString()
+      hr
+      img.img-fluid.rounded(src= '/'+article.productImage  alt='')
+      hr
+      p.lead
+      blockquote.blockquote
+        p.mb-0
+        footer.blockquote-footer
+          | Someone famous in
+          cite(title='Source Title') Source Title
+      p= article.body        
+      p
+      hr
+      .card.my-4
+        h5.card-header Action
+        .card-body
+            if user
+              if user.id == article.author
+            a.btn.btn-primary(href='/articles/edit/'+article._id) edit
+            a.btn.btn-danger.delete-article(href='#',data-id=article._id) Delete
+       
+        
+          
+          
+    
